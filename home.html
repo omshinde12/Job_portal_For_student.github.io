@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Student Job Portal</title>
+    <meta name="viewport" content="width=device-width, intial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <script src="https://kit.fontawesome.com/dbed6b6114.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <!-- header -->
+    <header class="header">
+        <div class="nav-section">
+            <div class="brand-and-navBtn">
+                <span class="brand-name">
+
+                    Careernest
+                </span>
+                <span class="navBtn flex">
+                    <i class="fas fa-bars"></i>
+                </span>
+            </div>
+
+            <!-- navigation menu -->
+            <nav class="top-nav">
+                <ul>
+                    <li><a href="home.html" >Home</a></li>
+                    <li><a href="intern.html">Internship/Job</a></li>
+                    <li><a href="GetResume.html">GetResume</a></li>
+                    <li><a href="prep.html">GetPrep</a></li>
+                    <li><a href="emp.html">Profile</a></li>
+                    <li><a href="Feedback.html">Feedback</a></li>
+                    <li><a href="login.html" id="logoutBtn">Logout</a></li>
+
+                </ul>
+            </nav>
+            <span style="color:yellow;"class="bell-icon">
+            <i class="far fa-bell"></i>
+            <span class="notification">3</span>
+        </span>
+        </div>
+
+        <div class="container about">
+            <div class="about-content">
+                <div class="about-img flex">
+                    <img src="images/about-img.png" alt="photographer img">
+                </div>
+                <h2> Freshers?..</h2>
+                <blockquote>
+                    "We are here to nesting your career!"<br>Unlock your potential with our job portal, where endless opportunities await. Explore a myriad of
+                    exciting career prospects tailored to your skills and aspirations.
+                </blockquote>
+            </div><br>
+            <!-- Inside the header -->
+<div class="search-box">
+    <input type="text" id="searchInput" placeholder="Search...">
+    <span class="search-icons">
+        <i class="fas fa-search" id="searchBtn"></i>
+        <i class="fas fa-microphone" id="micBtn"></i>
+    </span>
+</div>
+
+
+            <div class="social-icons">
+                <ul>
+                    <li>
+                        <a href="https://www.facebook.com/adityaa.pawatekar"><i class="fab fa-facebook"></i></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/trendy_capturez?r=nametag"><i
+                                class="fab fa-instagram"></i></a>
+                    </li>
+                    <li>
+                        <a href="https://wa.me/qr/NTMYBGCN7R5RC1"><i class="fab fa-whatsapp"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <!-- end of header -->
+    <footer>
+    <div class="container">
+        <h1>About Us</h1>
+
+        <div class="about-section">
+            <h2 style="color: green; font-size: 30px;text-align: center;">WELCOME TO CAREERNEST AND GRAB YOUR GOOD ONE!</h2>
+            <h2>Our Mission</h2>
+            <p>Our mission is to connect students with valuable internship and job opportunities, helping them kick-start
+                their careers in their desired fields. We strive to provide a user-friendly platform that caters to the
+                needs of both students and employers, facilitating seamless interaction and mutual benefit.</p>
+
+            <h2>Our Vision</h2>
+            <p>Our vision is to become the leading job portal for students, recognized for our commitment to excellence,
+                innovation, and integrity. We aim to empower students by providing access to diverse career options
+                and resources, enabling them to achieve their professional aspirations and contribute meaningfully
+                to society.</p>
+        </div>
+    </div>
+   </footer>
+
+    <script src="script.js"></script>
+    <script>
+       // Function to validate search input
+function validateSearch() {
+    var searchInput = document.getElementById('searchInput').value.trim().toLowerCase();
+    
+    // Check search input and redirect accordingly
+    switch(searchInput) {
+        case 'internships':
+            window.location.href = 'intern.html'; // Replace 'internships.html' with the actual URL of your internships page
+            break;
+        case 'career opportunities':
+            window.location.href = 'intern.html'; // Replace 'careers.html' with the actual URL of your careers page
+            break;
+        case 'part-time or full-time jobs':
+            window.location.href = 'intern.html'; // Replace 'jobs.html' with the actual URL of your jobs page
+            break;
+        default:
+            alert('Content not found');
+    }
+}
+
+// Event listener for search button click
+document.getElementById('searchBtn').addEventListener('click', validateSearch);
+
+// Event listener for mic button click (optional, if you want to add voice search functionality)
+document.getElementById('micBtn').addEventListener('click', function() {
+    // Add code for voice search functionality
+    alert('Voice search feature will be implemented soon!');
+});
+        // Add event listener to the logout button
+        document.getElementById("logoutBtn").addEventListener("click", function() {
+            // Redirect the user to the login page
+            window.location.href = "login.html"; // Replace "login.html" with your actual login page URL
+        });
+  
+
+    </script>
+</body>
+
+</html>

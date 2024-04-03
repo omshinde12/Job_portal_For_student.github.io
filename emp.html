@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Student Job Portal</title>
+    <meta name="viewport" content="width=device-width, intial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <script src="https://kit.fontawesome.com/dbed6b6114.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        .profile-container {
+            max-width: 500px;
+            margin: 20px auto;
+            background-color: transform;
+            padding: 20px;
+            border-radius: 1px solid white;
+            box-shadow: 0 0 10px white;
+        }
+        .profile-picture {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+        .qr-code {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 50px;
+        }
+        .button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 10px;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+        </style>
+</head>
+
+<body>
+
+    <!-- header -->
+    <header class="header">
+        <div class="nav-section">
+            <div class="brand-and-navBtn">
+                <span class="brand-name">
+
+                    Careernest
+                </span>
+                <span class="navBtn flex">
+                    <i class="fas fa-bars"></i>
+                </span>
+            </div>
+
+            <!-- navigation menu -->
+            <nav class="top-nav">
+                <ul>
+                    <li><a href="home.html" >Home</a></li>
+                    <li><a href="intern.html">Internship/Job</a></li>
+                    <li><a href="GetResume.html">GetResume</a></li>
+                    <li><a href="prep.html">GetPrep</a></li>
+                    <li><a href="emp.html">Profile</a></li>
+                    <li><a href="Feedback.html">Feedback</a></li>
+                    <li><a href="login.html" id="logoutBtn">Logout</a></li>
+                    
+                </ul>
+            </nav>
+            </div>
+            <div class="profile-container">
+                <img class="profile-picture" src="emp.png" alt="Employee Photo">
+                <div>
+                    <h2>Aditi</h2>
+                    <p>Experienced Employee</p>
+                    <h11 style="color: yellow;">abc@gmail.com</h11><br>
+                    <h11 style="color: yellow;">+91 7657465746</h11>
+                    <img class="qr-code" src="qr.png" alt="QR Code">
+                    <p style="margin: auto;">One of the standout features of XYZ is its intuitive and user-friendly interface. Navigating through job listings, creating profiles, and applying for positions are seamless processes, enhancing the overall user experience.</p>
+                    <button class="button" onclick="shareProfile()">Share Profile</button>
+                    <button class="button" onclick="uploadNewProfile()">Upload New Profile</button>
+                </div>
+            </div><br>
+            <div class="profile-container">
+                <img class="profile-picture" src="emp2.png" alt="Employee Photo">
+                <div>
+                    <h2>Aditya</h2>
+                    <p>Experienced Employee</p>
+                    <h11 style="color: yellow;">abc@gmail.com</h11><br>
+                    <h11 style="color: yellow;">+91 7657465746</h11>
+                    <img class="qr-code" src="qr.png" alt="QR Code">
+                    <p>Job seekers can set up personalized job alerts based on their preferences. This proactive approach ensures that they stay updated about new job postings that match their criteria, increasing their chances of finding suitable employment.</p>
+                    <button class="button" onclick="shareProfile()">Share Profile</button>
+                    <button class="button" onclick="uploadNewProfile()">Upload New Profile</button>
+                </div>
+            </div>
+        </header>
+            <script>
+                function shareProfile() {
+                    // Logic for sharing profile
+                    alert("Profile shared successfully!");
+                }
+        
+                function uploadNewProfile() {
+                    // Logic for uploading new profile
+                    alert("Upload new profile functionality will be implemented soon!");
+                }
+            </script>
+            </body>
+            </html>

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Student Job Portal</title>
+    <meta name="viewport" content="width=device-width, intial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <script src="https://kit.fontawesome.com/dbed6b6114.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: transparent;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border: 1px solid white;
+        }
+
+        h1 {
+            text-align: center;
+            color: green;
+        }
+
+        select,
+        input[type="radio"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            background-color: gray;
+            font-size: 16px;
+        }
+
+        button {
+            display: block;
+            margin: 0 auto;
+            padding: 10px 20px;
+            background-color: green;
+            color: gray;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        #questionAnswer,
+        .video-section {
+            margin-top: 20px;
+        }
+
+        .video-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .video-list li {
+            margin-bottom: 10px;
+            color: red;
+        }
+
+        .video-list li a {
+            display: block;
+            padding: 10px;
+            background-color: gray;
+            text-decoration: none;
+            color: #333;
+            border-radius: 4px;
+            
+        }
+
+        .video-list li a:hover {
+            background-color:green;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- header -->
+    <header class="header">
+        <div class="nav-section">
+            <div class="brand-and-navBtn">
+                <span class="brand-name">
+
+                    Careernest
+                </span>
+                <span class="navBtn flex">
+                    <i class="fas fa-bars"></i>
+                </span>
+            </div>
+
+            <!-- navigation menu -->
+            <nav class="top-nav">
+                <ul>
+                    <li><a href="home.html" >Home</a></li>
+                    <li><a href="intern.html">Internship/Job</a></li>
+                    <li><a href="GetResume.html">GetResume</a></li>
+                    <li><a href="prep.html">GetPrep</a></li>
+                    <li><a href="emp.html">Profile</a></li>
+                    <li><a href="Feedback.html">Feedback</a></li>
+                    <li><a href="login.html" id="logoutBtn">Logout</a></li>
+                    
+                </ul>
+            </nav>
+            </div>
+            <div class="container">
+                <h1>Interview Questions as per Field</h1>
+        
+                <!-- Field Selection Dropdown -->
+                <select id="fieldSelect">
+                    <option value="">Select Education Field</option>
+                    <option value="computer_science">Computer Science</option>
+                    <option value="engineering">Engineering</option>
+                    <!-- Add more fields as needed -->
+                </select>
+        
+                <!-- Mock Test / Aptitude Section -->
+                <div id="mockTestSection"></div>
+        
+                <!-- Button to Display Questions and Answers -->
+                <button id="showQuestions">Show Questions & Answers</button>
+        
+                <!-- Button to Start Mock Test -->
+                <button id="startMockTest">Start Mock Test</button>
+        
+                <!-- Question and Answer Display Area -->
+                <div id="questionAnswer"></div>
+        
+            
+                <div class="video-section">
+                    <h2>Interview Preparation Videos</h2>
+                    <ul class="video-list" id="videoList">
+                        <li><a href="https://www.youtube.com/watch?v=OLVUrgQ_BbA&pp=ygUiaW50ZXJ2aWV3IHJlbGF0ZWQgdmlkZW9zIGFwbmEgY29sbA%3D%3D" style="color: red;">Interview prepration video</a></li>
+                        <li><a href="https://www.youtube.com/watch?v=EW4dEzfBst0" style="color: red;">Interview prepration video</a></li>
+                        <li><a href="https://www.youtube.com/watch?v=EW4dEzfBst0" style="color: red;">Interview prepration video</a></li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+            <script>
+               
+                var mockTests = {
+                    computer_science: ["Test 1", "Test 2", "Test 3"],
+                    engineering: ["Test A", "Test B", "Test C"]
+                    
+                };
+        
+                
+                function displayMockTests() {
+                    var fieldSelect = document.getElementById("fieldSelect");
+                    var mockTestSection = document.getElementById("mockTestSection");
+                    var selectedField = fieldSelect.value;
+        
+                    mockTestSection.innerHTML = "";
+        
+                    if (selectedField !== "") {
+                        var tests = mockTests[selectedField];
+                        if (tests && tests.length > 0) {
+                            tests.forEach(function (test) {
+                                var radio = document.createElement("input");
+                                radio.type = "radio";
+                                radio.name = "mockTest";
+                                radio.value = test;
+                                mockTestSection.appendChild(radio);
+        
+                                var label = document.createElement("label");
+                                label.htmlFor = test;
+                                label.textContent = test;
+                                mockTestSection.appendChild(label);
+        
+                                var br = document.createElement("br");
+                                mockTestSection.appendChild(br);
+                            });
+                        } else {
+                            mockTestSection.innerHTML = "No mock tests available for this field.";
+                        }
+                    }
+                }
+        
+                
+                function showQuestionsAndAnswers() {
+                    var fieldSelect = document.getElementById("fieldSelect");
+                    var selectedField = fieldSelect.value;
+                    var questionAnswer = document.getElementById("questionAnswer");
+        
+                    questionAnswer.innerHTML = "";
+        
+                    if (selectedField !== "") {
+                        var questions = questionsAndAnswers[selectedField];
+                        if (questions) {
+                            for (var key in questions) {
+                                var question = key.replace("question", "");
+                                var answer = questions[key];
+                                questionAnswer.innerHTML += "<h3>Question " + question + ":</h3>";
+                                questionAnswer.innerHTML += "<p>" + answer + "</p>";
+                            }
+                        } else {
+                            alert("No questions available for this field.");
+                        }
+                    } else {
+                        alert("Please select an education field.");
+                    }
+                }
+        
+                // Event listener for the button click to display questions and answers
+                var showQuestionsButton = document.getElementById("showQuestions");
+                showQuestionsButton.addEventListener("click", showQuestionsAndAnswers);
+        
+                // Event listener for the button click to start the mock test
+                var startMockTestButton = document.getElementById("startMockTest");
+                startMockTestButton.addEventListener("click", startMockTest);
+        
+                // Event listener for field selection change to display mock test options
+                var fieldSelect = document.getElementById("fieldSelect");
+                fieldSelect.addEventListener("change", displayMockTests);
+            </script>
+        </body>
+        
+        </html>
+        

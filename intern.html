@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Student Job Portal</title>
+    <meta name="viewport" content="width=device-width, intial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <script src="https://kit.fontawesome.com/dbed6b6114.js" crossorigin="anonymous"></script>
+<style>
+    .s-box-container{
+	width:100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.s-box{
+    border:1px solid  white;
+	display:flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	border-radius: 10px;
+	width:180px;
+	padding: 20px 25px;
+	height: 400px;
+	box-sizing: border-box;
+	margin: 30px;
+	position: relative;
+        background:transparent;
+}
+.s-box img{
+	height: 75px;
+}
+.s-box h1{
+	color:white;
+	letter-spacing: 1px;
+	text-align:center;
+	margin-bottom: 8px;
+	
+}
+.s-box p{
+	color: white;
+	text-align: center;
+}
+.s-btn{
+	width: 140px;
+	height: 40px;
+	border-radius: 20px;
+	border:1px solid green;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color:white;
+	margin-top:10px; 
+}
+.bar{
+	width: 100px;
+	height: 6px;
+	position: absolute;
+	left: 50%;
+	top: 0%;
+	transform: translateX(-50%);
+	background-color:black; 
+	border-radius: 0px 0px 10px 10px;
+	display: none;
+	animation: bar 0.5s;
+}
+.s-box:hover{
+	box-shadow: 2px 2px 30px green;
+	transition: all ease 0.3s;
+}
+.s-btn:hover{
+	background-color:green;
+	border: 2px solid green;
+	color:white;
+	transition: all ease 0.3s;
+}
+.s-box:hover .bar{
+	display: block;
+}
+@keyframes bar{
+	0%{
+		width:0px;
+	}
+	100%{
+		width:100px;
+	}
+}
+@media(max-width:1050px){
+	.s-box-container{
+		flex-wrap: wrap;
+		
+	}	
+	.services{
+		height: auto;
+	}
+	.s-heading{
+		margin: 15px;
+	}
+	.s-box{
+		flex-grow: 1;
+	}
+	
+}
+
+</style>
+</head>
+
+<body>
+
+    <!-- header -->
+    <header class="header">
+        <div class="nav-section">
+            <div class="brand-and-navBtn">
+                <span class="brand-name">
+
+                    Careernest
+                </span>
+                <span class="navBtn flex">
+                    <i class="fas fa-bars"></i>
+                </span>
+            </div>
+
+            <!-- navigation menu -->
+            <nav class="top-nav">
+                <ul>
+                    <li><a href="home.html" >Home</a></li>
+                    <li><a href="intern.html">Internship/Job</a></li>
+                    <li><a href="GetResume.html">GetResume</a></li>
+                    <li><a href="prep.html">GetPrep</a></li>
+                    <li><a href="emp.html">Profile</a></li>
+                    <li><a href="Feedback.html">Feedback</a></li>
+                    <li><a href="login.html" id="logoutBtn">Logout</a></li>
+                    
+                </ul>
+            </nav>
+            </div>
+            <div class="s-box-container">	
+                <div class="s-box">
+                <div class="bar"></div>
+                 <h1 style="font-size:21px;color:green;top:10px">Python
+                    Developer</h1>
+                 <ul>
+                    <li style="text-align: center;">-INFOSYS-</li><br>
+                    <li>Location:Pune,India</li>
+                    <li>Job Role:IT & Software</li>
+                    <li>Job type:Full-time</li>
+                    <li>Vacancies:10</li>
+                    <li>Eligibility:BCA,BCS,MCA,
+                        MCS,IT Engineer, Software Engineer
+                        comp engineer</li>
+                 </ul>
+                <a class="s-btn" href="#">APPLY NOW</a>
+                </div>	
+                <div class="s-box">
+                <div class="bar"></div>
+                <h1 style="font-size:21px;color:green">Cyber Security</h1><br>
+                <ul>
+                    <li style="text-align: center;">-TECH-MAHINDRA-</li><br>
+                    <li>Location:Hydrabad,India</li>
+                    <li>Job Role:Security Analyst</li>
+                    <li>Job type:Full-time</li>
+                    <li>Vacancies:5</li>
+                    <li>Eligibility:Certified Ethical Hacker</li>
+                 </ul>
+                <a class="s-btn" href="#">APPLY NOW</a>
+                </div>	
+                <div class="s-box">
+                <div class="bar"></div>
+                <h1 style="font-size:21px;color:green">Graphics Designer</h1><br>
+                <ul>
+                    <li style="text-align: center;">-ADOBE-</li><br>
+                    <li>Location:Pune,India</li>
+                    <li>Job Role:Visualizing & Creating Graphics</li>
+                    <li>Job type:Full-time</li>
+                    <li>Vacancies:15</li>
+                    <li>Eligibility:Graduate</li>
+                 </ul>
+                <a class="s-btn" href="#">APPLY NOW</a>
+                </div>
+                    <div class="s-box">
+                <div class="bar"></div>
+                <h1 style="font-size:21px;color:green">Cloud Engineer</h1>
+                <ul>
+                    <li style="text-align: center;">-AMAZON-</li><br>
+                    <li>Location:Bangluru,India</li>
+                    <li>Job Role:Cloud Engineer</li>
+                    <li>Job type:Full-time</li>
+                    <li>Vacancies:10</li>
+                    <li>Eligibility: cloud certification,Masters,
+                         1 year experience
+                    </li>
+                 </ul>
+                <a class="s-btn" href="#">APPLY NOW</a>
+                </div>
+                    <div class="s-box">
+                <div class="bar"></div>
+                <h1 style="font-size:21px;color:green">HR Executive</h1>
+                <ul>
+                    <li style="text-align: center;">-TCS-</li><br>
+                    <li>Location:Pune,<br>Hydrabad,<br>Nagpur</li>
+                    <li>Job Role:HR</li>
+                    <li>Job type:Full-time</li>
+                    <li>Vacancies:2</li>
+                    <li>Eligibility:MBA,
+                        2 years experience</li>
+                 </ul>  
+                <a class="s-btn" href="#">APPLY NOW</a>
+                </div><br>
+                     <br>
+            
+            </header>
+    
+    <script src="script.js"></script>
+    
+</body>
+
+</html>
